@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ymw0rok5m2e"]
+
+[ext_resource type="Texture2D" uid="uid://v3344umaxl5s" path="res://Game/Resources/Textures/Gameplay/Cell.png" id="1_8xcs3"]
+[ext_resource type="Texture2D" uid="uid://7uxqgq1lr3k5" path="res://Game/Resources/Textures/Gameplay/CellHalf.png" id="2_g11js"]
+[ext_resource type="Script" path="res://Game/Scenes/Gameplay/CellAttributes/Cell.cs" id="3_88a7x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf3o6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8xcs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g11js")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Cell" type="AnimatedSprite2D"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+scale = Vector2(3.2, 3.2)
+sprite_frames = SubResource("SpriteFrames_pf3o6")
+centered = false
+script = ExtResource("3_88a7x")

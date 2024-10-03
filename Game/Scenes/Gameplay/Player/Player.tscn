@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://blhpcu3h1naue"]
+
+[ext_resource type="Script" path="res://Game/Scenes/Gameplay/Player/Player.cs" id="1_hvx5l"]
+[ext_resource type="Texture2D" uid="uid://cc7lwcywg0oai" path="res://Game/Resources/Textures/References/bruh.pn.png" id="2_861ph"]
+[ext_resource type="PackedScene" uid="uid://6ymw0rok5m2e" path="res://Game/Scenes/Gameplay/CellAttributes/Cell.tscn" id="2_cegmc"]
+[ext_resource type="Texture2D" uid="uid://b7a17a2h726sg" path="res://Game/Resources/Textures/General/pixel.png" id="3_p17ms"]
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("dim", "playfield")]
+script = ExtResource("1_hvx5l")
+dim = NodePath("Dim")
+playfield = NodePath("Playfield")
+cell = ExtResource("2_cegmc")
+
+[node name="ref" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -96)
+scale = Vector2(4, 4)
+texture = ExtResource("2_861ph")
+
+[node name="Dim" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-128, -256)
+scale = Vector2(256, 512)
+texture = ExtResource("3_p17ms")
+centered = false
+
+[node name="Playfield" type="Node2D" parent="."]
